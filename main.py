@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from data import question_data
+from question_model import Question
+from quiz_brain import QuizBrain
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Create an empty list of question objects
+questions = []
 
+# Convert question dictionaries from the given data to question objects and add them to the list
+for question in question_data:
+    questions.append(Question(question["text"], question["answer"]))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+my_quiz = QuizBrain(questions)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+my_quiz.next_question()
