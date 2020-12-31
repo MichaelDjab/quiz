@@ -11,4 +11,4 @@ for question in question_data:
 
 my_quiz = QuizBrain(questions)
 
-my_quiz.next_question()
+my_quiz.play_quiz()
